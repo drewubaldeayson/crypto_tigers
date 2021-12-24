@@ -9,17 +9,17 @@ import { TigerConfig } from "../Tiger/Tiger";
 import { shouldShowPattern } from "../../utils/tigerLogic";
 
 interface PatternChipProps {
-  tigerConfig: TigerConfig;
+  tigerPropConfig: TigerConfig;
 }
 
-export const PatternChip = ({ tigerConfig }: PatternChipProps) => {
-  const { patternColor, pattern } = tigerConfig;
+export const PatternChip = ({ tigerPropConfig }: PatternChipProps) => {
+  const { patternColor, pattern } = tigerPropConfig;
 
   const colorHex = tigerConfig.properties.mainColor.variations[patternColor];
   const colorName = getColorName(colorHex);
   const patternName = getPatternName(pattern);
 
-  if (!shouldShowPattern(tigerConfig)) {
+  if (!shouldShowPattern(tigerPropConfig)) {
     return null;
   }
 

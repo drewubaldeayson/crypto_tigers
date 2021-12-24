@@ -8,15 +8,15 @@ import { TigerConfig } from "../Tiger/Tiger";
 import { shouldShowDecoration } from "../../utils/tigerLogic";
 
 interface DecorationChipProps {
-  tigerConfig: TigerConfig;
+  tigerPropConfig: TigerConfig;
 }
 
-export const DecorationChip = ({ tigerConfig }: DecorationChipProps) => {
-  const { decoration } = tigerConfig;
+export const DecorationChip = ({ tigerPropConfig }: DecorationChipProps) => {
+  const { decoration } = tigerPropConfig;
 
   const decorationName = getDecorationName(decoration);
 
-  if (!shouldShowDecoration(tigerConfig)) {
+  if (!shouldShowDecoration(tigerPropConfig)) {
     return null;
   }
 

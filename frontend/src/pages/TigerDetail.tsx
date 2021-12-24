@@ -99,10 +99,10 @@ export const TigerDetail = () => {
                 alignItems="flex-start"
                 mt={3}
               >
-                <ColorChip tigerConfig={tigerConfig} />
-                <PatternChip tigerConfig={tigerConfig} />
-                <EyeChip tigerConfig={tigerConfig} />
-                <DecorationChip tigerConfig={tigerConfig} />
+                <ColorChip tigerPropConfig={tigerConfig} />
+                <PatternChip tigerPropConfig={tigerConfig} />
+                <EyeChip tigerPropConfig={tigerConfig} />
+                <DecorationChip tigerPropConfig={tigerConfig} />
               </Box>
             </Grid>
             <Grid item xs={12} sm={4}>

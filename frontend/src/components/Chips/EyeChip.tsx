@@ -8,11 +8,11 @@ import { getColorName, getEyeName } from "../../utils/getAttributeName";
 import { TigerConfig } from "../Tiger/Tiger";
 
 interface EyeChipProps {
-  tigerConfig: TigerConfig;
+  tigerPropConfig: TigerConfig;
 }
 
-export const EyeChip = ({ tigerConfig }: EyeChipProps) => {
-  const { eyeColor, eyes } = tigerConfig;
+export const EyeChip = ({ tigerPropConfig }: EyeChipProps) => {
+  const { eyeColor, eyes } = tigerPropConfig;
 
   const colorHex = tigerConfig.properties.eyeColor.variations[eyeColor];
   const colorName = getColorName(colorHex);

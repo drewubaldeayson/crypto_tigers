@@ -8,11 +8,11 @@ import { getColorName } from "../../utils/getAttributeName";
 import { TigerConfig } from "../Tiger/Tiger";
 
 interface ColorChipProps {
-  tigerConfig: TigerConfig;
+  tigerPropConfig: TigerConfig;
 }
 
-export const ColorChip = ({ tigerConfig }: ColorChipProps) => {
-  const { mainColor: color1, secondaryColor: color2 } = tigerConfig;
+export const ColorChip = ({ tigerPropConfig }: ColorChipProps) => {
+  const { mainColor: color1, secondaryColor: color2 } = tigerPropConfig;
 
   const color1Hex = tigerConfig.properties.mainColor.variations[color1];
   const color2Hex = tigerConfig.properties.secondaryColor.variations[color2];
