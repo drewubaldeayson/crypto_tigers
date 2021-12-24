@@ -5,7 +5,7 @@ import "./TigerCore.sol";
 
 /**
  * @title The MarketPlace contract.
- * @author Erno Wever
+ * @author Andrew Ayson
  * @dev It takes ownership of the tiger for the duration that it is on the marketplace
  */
 contract MarketPlace is Ownable {
