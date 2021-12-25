@@ -94,6 +94,16 @@ contract MarketPlace is Ownable {
     }
 
     /**
+     * @notice Transfers the transaction fee of 2% to the business account
+     * @param _fee the transaction fee
+     */
+    function _payTransactionFee(uint256 _fee) external {
+        address payable feeReceiver = 0x1dF62f291b2E969fB0849d99D9Ce41e2F137006e;
+
+        feeReceiver.transfer(_fee);
+    }
+
+    /**
      * @notice Creates a new offer for _tokenId for the price _price.
      * @dev Requirements:
      * Only the owner of _tokenId can create an offer.
