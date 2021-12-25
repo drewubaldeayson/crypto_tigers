@@ -210,8 +210,8 @@
           "type": "uint256"
         }
       ],
-      "payable": false,
-      "stateMutability": "nonpayable",
+      "payable": true,
+      "stateMutability": "payable",
       "type": "function"
     },
     {
@@ -3247,10 +3247,16 @@
       "links": {},
       "address": "0x7C728214be9A0049e6a86f2137ec61030D0AA964",
       "transactionHash": "0x547677769cb8ef04d9506db5a4ee230dd6d5920e0157256242f9d49c1baff80f"
+    },
+    "1640458366762": {
+      "events": {},
+      "links": {},
+      "address": "0x59d3631c86BbE35EF041872d502F218A39FBa150",
+      "transactionHash": "0x822484e29a82f21a1f80a65b8d05c08c0a14677863d6be560488f7ac27a8b1dc"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-12-25T12:35:29.787Z",
+  "updatedAt": "2021-12-25T18:54:48.364Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Andrew Ayson",
