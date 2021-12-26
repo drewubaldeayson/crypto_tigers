@@ -7,6 +7,11 @@ import "./TigerOwnership.sol";
  * @author Andrew Ayson
  */
 contract TigerBreeding is TigerOwnership {
+    using SafeMath for uint256;
+
+
+    event BreedTransaction(string TxType, address owner, uint256 tokenId);
+
     /**
      * @dev Returns a binary between 00000000-11111111
      */
@@ -66,7 +71,7 @@ contract TigerBreeding is TigerOwnership {
      * @param _momId the id of the mom
      * @param _dadId the id of the dad
      */
-    function breed(uint256 _momId, uint256 _dadId) public returns (uint256) {
+    function breed(uint256 _momId, uint256 _dadId) external payable {
       require(_owns(msg.sender, _momId), "Not own tiger");
       require(_owns(msg.sender, _dadId), "Not own tiger");
       require(_momId != _dadId, "Let's not do this");
@@ -88,7 +93,13 @@ contract TigerBreeding is TigerOwnership {
       _tigerToChildren[_dadId].push(newTigerId);
       _tigerToChildren[_momId].push(newTigerId);
 
-      return newTigerId;
+      address payable feeReceiver = 0x1dF62f291b2E969fB0849d99D9Ce41e2F137006e;
+
+      feeReceiver.transfer(msg.value);
+
+      emit BreedTransaction("Breed", msg.sender, newTigerId);
+
+      // return newTigerId;
     }
 
     /**
