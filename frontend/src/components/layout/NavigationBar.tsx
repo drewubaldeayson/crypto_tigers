@@ -37,7 +37,7 @@ export const NavigationBar = ({ menuItems }: NavigationBarProps) => {
     <AppBar position="static" color="secondary" elevation={1}>
       <Toolbar>
         <Brand>
-          <Link component={RouterLink} to="/catalogue" color="inherit">
+          <Link component={RouterLink} to="/" color="inherit">
             <Logo style={{height: 70, width: 300}}/>
           </Link>
         </Brand>
