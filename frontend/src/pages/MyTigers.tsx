@@ -1,3 +1,4 @@
+import { parseEther } from "@ethersproject/units";
 import React, { useState } from "react";
 import { Typography, Button, Box } from "@material-ui/core";
 import { TigerGrid } from "../components/TigerGrid/TigerGrid";
@@ -30,7 +31,8 @@ export const MyTigers = () => {
       return;
     }
 
-    breed.call({
+    await breed.call({
+      value: parseEther("0.01"),
       args: [breedTiger1.id, breedTiger2.id],
       afterResponse: () => {
         setBreedTiger1(null);
