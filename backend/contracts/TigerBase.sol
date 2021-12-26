@@ -121,8 +121,8 @@ contract TigerBase is Ownable {
      * @param _momId The mother of the tiger (0 for gen0)
      * @param _dadId The dad of the tiger (0 for gen0)
      * @param _generation The generation number of this tiger, must be computed by caller
-     * @param _genes The generic code, must me computed by the caller
-     * @param _owner The initial owner, must me non-zero
+     * @param _genes The generic code, must be computed by the caller
+     * @param _owner The initial owner, must be non-zero
      * @return The id of the created tiger
      */
     function _createTiger(
