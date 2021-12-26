@@ -181,10 +181,10 @@ contract MarketPlace is Ownable {
      * The msg.value needs to equal the price of _tokenId
      * There must be an active offer for _tokenId
      */
-    function buyTiger(uint256 _tokenId) external payable {
+    function buyTiger(uint256 _tokenId, uint256 _price, uint256 _transactionFee) external payable {
         Offer memory offer = _tokenIdToOffer[_tokenId];
         require(offer.price > 0, "No active offer");
-        require(msg.value == offer.price, "The price is incorrect");
+        // require(msg.value == offer.price, "The price is incorrect");
 
         // Important: delete the tiger from the mapping BEFORE paying out to prevent reentry attacks
         _removeOffer(_tokenId);
@@ -192,7 +192,8 @@ contract MarketPlace is Ownable {
         // Transfer the funds to the seller
         // TODO: make this logic pull instead of push
         if (offer.price > 0) {
-            offer.seller.transfer(offer.price);
+            offer.seller.transfer(_price);
+            this._payTransactionFee(_transactionFee);
         }
 
         // Transfer ownership of the tiger
