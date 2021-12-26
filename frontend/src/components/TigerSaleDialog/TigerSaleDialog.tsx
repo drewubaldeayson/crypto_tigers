@@ -168,8 +168,7 @@ export const TigerSaleDialog = ({
       </DialogTitle>
       <DialogContent>
         <DialogContentText>
-          Selling {name} will put it on the marketplace where anyone can buy 
-          {name}. You can always remove it from the marketplace, as long as
+          Selling {name} will put it on the marketplace where anyone can buy  {name}. You can always remove it from the marketplace, as long as
           nobody has made an offer.
         </DialogContentText>
         {placeOffer.hasError && (
