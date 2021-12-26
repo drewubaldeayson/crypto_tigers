@@ -1,3 +1,6 @@
+import { BigNumber } from "@ethersproject/bignumber";
+import { parseEther } from "@ethersproject/units";
+import { toBn } from "evm-bn";
 import React from "react";
 import {
   Dialog,
@@ -34,9 +37,11 @@ export const TigerBuyDialog = ({
   const buyTiger = useFunction(marketPlace, "buyTiger");
 
   const acceptOffer = async () => {
+    let transactionFee = Number(offer.price.valueOf()) * 0.02;
+    let totalAmount = Number(offer.price.valueOf()) - transactionFee;
     await buyTiger.call({
       value: offer._rawPrice,
-      args: [tigerData.id],
+      args: [tigerData.id, parseEther(totalAmount.toString()), parseEther(transactionFee.toString())],
       afterResponse: onClose,
       afterConfirmation: () => loadOffer(marketPlace, true),
     });
